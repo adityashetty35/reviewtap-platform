@@ -5,5 +5,5 @@ compatibility_date = "2026-10-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "reviewtap-db"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "e290c573-c082-42c8-9508-7aa5836fd8a7"
 migrations_dir = "migrations"
