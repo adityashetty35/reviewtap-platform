@@ -1,0 +1,17 @@
+{
+  "name": "reviewtap-platform",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:remote": "wrangler d1 migrations apply reviewtap-db --remote",
+    "db:local": "wrangler d1 migrations apply reviewtap-db --local"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
