@@ -10,19 +10,27 @@ const validUrl=s=>{try{const u=new URL(s);return u.protocol==='https:'&&!u.usern
 
 function cardSvg(id,qrSvg){
 const qrData='data:image/svg+xml;base64,'+btoa(qrSvg);
-return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90mm" height="90mm" viewBox="0 0 1000 1000">
-<title>ReviewTap print card ${id}</title>
-<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#282828"/><stop offset=".5" stop-color="#111"/><stop offset="1" stop-color="#292929"/></linearGradient><linearGradient id="google" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ea4335"/><stop offset=".32" stop-color="#fbbc05"/><stop offset=".57" stop-color="#34a853"/><stop offset=".8" stop-color="#4285f4"/></linearGradient></defs>
-<rect width="1000" height="1000" fill="#111"/><rect x="10" y="10" width="980" height="980" rx="105" fill="url(#bg)" stroke="#070707" stroke-width="14"/><rect x="27" y="27" width="946" height="946" rx="95" fill="none" stroke="#050505" stroke-width="2"/>
-<text x="100" y="395" font-family="Arial,sans-serif" font-size="365" font-weight="700" fill="url(#google)">G</text>
-<text x="545" y="180" font-family="Arial,sans-serif" font-size="77" fill="white">review us</text><text x="460" y="285" font-family="Arial,sans-serif" font-size="81" fill="white">on <tspan font-weight="700">Google</tspan></text>
-<g fill="#ffb900"><path id="star" d="M0,-34 L9,-11 34,-11 14,4 22,29 0,15 -22,29 -14,4 -34,-11 -9,-11Z"/><use href="#star" xlink:href="#star" transform="translate(565 385)"/><use href="#star" xlink:href="#star" transform="translate(645 385)"/><use href="#star" xlink:href="#star" transform="translate(725 385)"/><use href="#star" xlink:href="#star" transform="translate(805 385)"/><use href="#star" xlink:href="#star" transform="translate(885 385)"/></g>
-<path d="M20 535 Q370 350 650 480 T980 500" fill="none" stroke="white" stroke-width="7"/>
-<text x="118" y="640" font-family="Arial,sans-serif" font-size="48" fill="white" transform="rotate(-5 118 640)">Tap your phone</text>
-<g transform="translate(140 690)" fill="none" stroke="white" stroke-width="13" stroke-linecap="round"><circle cx="95" cy="112" r="102"/><path d="M70 75 Q96 111 70 149 M99 55 Q141 110 99 170"/><rect x="200" y="20" width="87" height="196" rx="14"/><path d="M225 39 h35"/></g>
-<text x="472" y="785" font-family="Arial,sans-serif" font-size="51" fill="white">or</text>
-<text x="610" y="622" font-family="Arial,sans-serif" font-size="47" fill="white">Scan QR code</text>
-<rect x="610" y="654" width="290" height="290" fill="white" rx="5"/><image x="618" y="662" width="274" height="274" href="${qrData}" xlink:href="${qrData}"/>
+return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80mm" height="110mm" viewBox="0 0 800 1100">
+<title>ReviewTap print card ${id} — 80 by 110 mm</title>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#292929"/><stop offset=".55" stop-color="#111"/><stop offset="1" stop-color="#252525"/></linearGradient></defs>
+<rect width="800" height="1100" fill="#151515"/>
+<rect x="12" y="12" width="776" height="1076" rx="85" fill="url(#bg)" stroke="#070707" stroke-width="12"/>
+<rect x="25" y="25" width="750" height="1050" rx="77" fill="none" stroke="#050505" stroke-width="2"/>
+<text x="72" y="335" font-family="Arial,sans-serif" font-size="310" font-weight="bold" fill="#4285f4">G</text>
+<path d="M95 130 A155 155 0 0 1 337 130" fill="none" stroke="#ea4335" stroke-width="18"/>
+<path d="M94 290 A155 155 0 0 0 320 333" fill="none" stroke="#34a853" stroke-width="18"/>
+<text x="390" y="185" font-family="Arial,sans-serif" font-size="68" fill="white">review us</text>
+<text x="375" y="270" font-family="Arial,sans-serif" font-size="68" fill="white">on <tspan font-weight="bold">Google</tspan></text>
+<g fill="#fbbc05"><path id="star" d="M0,-26 L8,-8 27,-8 11,5 17,24 0,13 -17,24 -11,5 -27,-8 -8,-8Z"/>
+<use href="#star" xlink:href="#star" transform="translate(400 342)"/><use href="#star" xlink:href="#star" transform="translate(475 342)"/><use href="#star" xlink:href="#star" transform="translate(550 342)"/><use href="#star" xlink:href="#star" transform="translate(625 342)"/><use href="#star" xlink:href="#star" transform="translate(700 342)"/></g>
+<path d="M22 500 Q295 350 520 450 T780 460" fill="none" stroke="white" stroke-width="6"/>
+<text x="76" y="575" font-family="Arial,sans-serif" font-size="45" fill="white">Tap your phone</text>
+<g transform="translate(85 620)" fill="none" stroke="white" stroke-width="11" stroke-linecap="round"><circle cx="88" cy="115" r="94"/><path d="M62 75 Q90 115 62 155 M91 55 Q132 115 91 175"/><rect x="182" y="22" width="85" height="185" rx="14"/><path d="M208 42 h31"/></g>
+<text x="340" y="780" font-family="Arial,sans-serif" font-size="43" fill="white">or</text>
+<text x="430" y="575" font-family="Arial,sans-serif" font-size="42" fill="white">Scan QR code</text>
+<rect x="425" y="605" width="320" height="320" fill="white" rx="5"/>
+<image x="435" y="615" width="300" height="300" href="${qrData}" xlink:href="${qrData}"/>
+<text x="400" y="1010" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" fill="#aaaaaa">ReviewTap • Tap NFC or scan QR</text>
 </svg>`;
 }
 function zipStore(entries){
@@ -67,7 +75,7 @@ const batch=cards.slice(i,i+10);
 const results=await Promise.all(batch.map(async(c)=>{const url=base+'/r/'+c.id;const q='https://api.qrserver.com/v1/create-qr-code/?size=512x512&format=svg&ecc=H&data='+encodeURIComponent(url);const response=await fetch(q);if(!response.ok)throw new Error('QR provider error');const svg=await response.text();if(!svg.includes('<svg'))throw new Error('Invalid QR image');return ['Card-'+c.id+'.svg',cardSvg(c.id,svg)]}));
 entries.push(...results);
 }
-entries.push(['PRINT-INSTRUCTIONS.txt','ReviewTap cards: SVG artwork, 90 x 90 mm square.\\nEach card has its own unique QR. Match the NFC chip URL to the corresponding card ID in the dealer CSV.\\nIMPORTANT: Confirm final card size, bleed, corner radius, and print color profile with your printer. These SVGs do not include bleed or CMYK conversion. Test-print and scan before mass production.\\n']);
+entries.push(['PRINT-INSTRUCTIONS.txt','ReviewTap cards: SVG artwork, 80 x 110 mm portrait.\\nEach card has its own unique QR. Match the NFC chip URL to the corresponding card ID in the dealer CSV.\\nIMPORTANT: Confirm final card size, bleed, corner radius, and print color profile with your printer. These SVGs do not include bleed or CMYK conversion. Test-print and scan before mass production.\\n']);
 return new Response(zipStore(entries),{headers:{'content-type':'application/zip','content-disposition':'attachment; filename="reviewtap-print-cards.zip"','cache-control':'no-store'}});
 }
 if(p==='/api/qr-codes.zip'&&m==='GET'){
